@@ -1,0 +1,124 @@
+:root {
+  --color-bg: #303030;
+  --color-bg2: #666666;
+  --color-1: #eeeeee;
+  --color-text: #aaaaaa;
+  --color-text2: #979797;
+  --color-a: #49aaff;
+}
+@font-face {
+  font-family: Verdana;
+  src: local('Verdana'), url(https://cdn.jsdelivr.net/gh/artru-git/fonts@v1/verdana-webfont.woff2) format('woff2');
+}
+@font-face {
+  font-family: Courier New;
+  src: local('Courier New'), url(https://cdn.jsdelivr.net/gh/artru-git/fonts@v1/cour-webfont.woff2) format('woff2');
+}
+.editor-styles-wrapper {
+  counter-reset: section;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: Verdana;
+  counter-reset: section-h2;
+}
+.editor-styles-wrapper h1, .editor-styles-wrapper h2, .editor-styles-wrapper h3, .editor-styles-wrapper h4, .editor-styles-wrapper h5, .editor-styles-wrapper h6 {
+  color: var(--color-1);
+  font-family: Courier New;
+}
+.editor-styles-wrapper a {
+  color: var(--color-a);
+}
+.editor-styles-wrapper strong {
+  color: var(--color-1);
+}
+.editor-styles-wrapper mark strong {
+  color: unset;
+}
+.editor-styles-wrapper ol, .editor-styles-wrapper ul {
+  padding-left: 20px;
+}
+.editor-styles-wrapper li {
+  list-style: inherit;
+  padding: 0;
+}
+.editor-styles-wrapper h2:before {
+  counter-increment: section-h2;
+  content: "#" counter(section-h2) "";
+  background-color: var(--color-bg2);
+  border-radius: 10px;
+  padding: 0px 5px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.editor-styles-wrapper h2 {
+  counter-reset: section-h3;
+}
+.editor-styles-wrapper h3:before {
+  counter-increment: section-h3;
+  content: "#" counter(section-h2) "." counter(section-h3);
+  background-color: var(--color-bg2);
+  border-radius: 10px;
+  padding: 0px 5px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.editor-styles-wrapper h3 {
+  counter-reset: section-h4;
+}
+.editor-styles-wrapper h4:before {
+  counter-increment: section-h4;
+  content: "#" counter(section-h2) "." counter(section-h3) "." counter(section-h4);
+  background-color: var(--color-bg2);
+  border-radius: 10px;
+  padding: 0px 5px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.editor-styles-wrapper h4 {
+  counter-reset: section-h5;
+}
+.editor-styles-wrapper h5:before {
+  counter-increment: section-h5;
+  content: "#" counter(section-h2) "." counter(section-h3) "." counter(section-h4) "." counter(section-h5);
+  background-color: var(--color-bg2);
+  border-radius: 10px;
+  padding: 0px 5px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.editor-styles-wrapper h5 {
+  counter-reset: section-h6;
+}
+.editor-styles-wrapper h6:before {
+  counter-increment: section-h6;
+  content: "#" counter(section-h2) "." counter(section-h3) "." counter(section-h4) "." counter(section-h5) "." counter(section-h6);
+  background-color: var(--color-bg2);
+  border-radius: 10px;
+  padding: 0px 5px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.editor-styles-wrapper code {
+  color: var(--color-1);
+  background-color: var(--color-bg2);
+  padding: 2px 5px;
+  border-radius: 10px;
+  word-break: break-all;
+}
+.editor-styles-wrapper pre {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  padding: 25px 0px 0px 15px;
+  background-color: #1e1e1e;
+}
+.editor-styles-wrapper pre code {
+  font-size: 12px;
+  background-color: #1e1e1e;
+  line-height: 1.5;
+  max-height: 60vh;
+  tab-size: 3;
+  white-space: pre;
+  padding: 0px 10px 25px 0px !important;
+  overflow-x: auto;
+}

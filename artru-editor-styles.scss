@@ -1,0 +1,154 @@
+:root {
+	--color-bg: #303030;
+	--color-bg2: #666666;
+	--color-1: #eeeeee;
+	--color-text: #aaaaaa;
+	--color-text2: #979797;
+	--color-a: #49aaff;
+}
+
+@font-face {
+	font-family: Verdana;
+	src: local('Verdana'), url(https://cdn.jsdelivr.net/gh/artru-git/fonts@v1/verdana-webfont.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: Courier New;
+	src: local('Courier New'), url(https://cdn.jsdelivr.net/gh/artru-git/fonts@v1/cour-webfont.woff2) format('woff2');
+}
+
+.editor-styles-wrapper {
+	counter-reset: section;
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	font-family: Verdana;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: var(--color-1);
+		font-family: Courier New;
+	}
+
+	a {
+		color: var(--color-a);
+	}
+
+	strong {
+		color: var(--color-1);
+	}
+
+	mark strong {
+		color: unset;
+	}
+
+	ol,
+	ul {
+		padding-left: 20px;
+	}
+
+	li {
+		list-style: inherit;
+		padding: 0;
+	}
+
+
+	counter-reset: section-h2;
+
+
+	h2:before {
+		counter-increment: section-h2;
+		content: "#" counter(section-h2)"";
+		background-color: var(--color-bg2);
+		border-radius: 10px;
+		padding: 0px 5px;
+		margin-right: 10px;
+		font-weight: bold;
+	}
+
+	h2 {
+		counter-reset: section-h3;
+	}
+
+	h3:before {
+		counter-increment: section-h3;
+		content: "#" counter(section-h2)"." counter(section-h3);
+		background-color: var(--color-bg2);
+		border-radius: 10px;
+		padding: 0px 5px;
+		margin-right: 10px;
+		font-weight: bold;
+	}
+
+	h3 {
+		counter-reset: section-h4;
+	}
+
+	h4:before {
+		counter-increment: section-h4;
+		content: "#" counter(section-h2)"." counter(section-h3)"." counter(section-h4);
+		background-color: var(--color-bg2);
+		border-radius: 10px;
+		padding: 0px 5px;
+		margin-right: 10px;
+		font-weight: bold;
+	}
+
+	h4 {
+		counter-reset: section-h5;
+	}
+
+	h5:before {
+		counter-increment: section-h5;
+		content: "#" counter(section-h2)"." counter(section-h3)"." counter(section-h4)"." counter(section-h5);
+		background-color: var(--color-bg2);
+		border-radius: 10px;
+		padding: 0px 5px;
+		margin-right: 10px;
+		font-weight: bold;
+	}
+
+	h5 {
+		counter-reset: section-h6;
+	}
+
+	h6:before {
+		counter-increment: section-h6;
+		content: "#" counter(section-h2)"." counter(section-h3)"." counter(section-h4)"." counter(section-h5)"." counter(section-h6);
+		background-color: var(--color-bg2);
+		border-radius: 10px;
+		padding: 0px 5px;
+		margin-right: 10px;
+		font-weight: bold;
+	}
+
+	code {
+		color: var(--color-1);
+		background-color: var(--color-bg2);
+		padding: 2px 5px;
+		border-radius: 10px;
+		word-break: break-all;
+	}
+
+	pre {
+		border-radius: 10px;
+		overflow: hidden;
+		position: relative;
+		padding: 25px 0px 0px 15px;
+		background-color: #1e1e1e;
+	}
+
+	pre code {
+		font-size: 12px;
+		background-color: #1e1e1e;
+		line-height: 1.5;
+		max-height: 60vh;
+		tab-size: 3;
+		white-space: pre;
+		padding: 0px 10px 25px 0px !important;
+		overflow-x: auto;
+	}
+}
